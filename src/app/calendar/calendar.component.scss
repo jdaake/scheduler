@@ -1,0 +1,95 @@
+#newCalendar {
+    // border: 1px solid black;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 2px 5px 5px black;
+    background-color: whitesmoke;
+}
+
+#calName,
+#calDesc,
+#addCal {
+    margin: 5px;
+    display: inline-block;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Lobster',
+        cursive;
+    text-align: center;
+    // color: white;
+}
+
+h6 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+
+#calendars,
+#events {
+    margin: auto;
+
+}
+
+.cal-card {
+    max-width: 300px;
+    margin: 10px;
+    float: left;
+    background-color: rgb(244, 244, 244);
+    color: black;
+
+
+    button {
+        color: black;
+    }
+
+    button:hover {
+        color: rgb(232, 35, 99);
+    }
+}
+
+.event-card {
+    max-width: 250px;
+    margin: 10px;
+    float: left;
+    background-color: rgb(114, 111, 111);
+    color: white;
+
+
+    button {
+        color: white;
+    }
+
+    button:hover {
+        color: rgb(232, 35, 99);
+    }
+}
+
+.calCardTitle,
+.eventCardTitle {
+    font-family: 'Lobster',
+        cursive;
+}
+
+.calCardTitle:hover {
+    color: rgb(232, 35, 99);
+    cursor: pointer;
+}
+
+.cal-card:hover,
+.event-card:hover {
+    transform: scale(1.03);
+}
+
+#eventName,
+#eventDesc,
+#eventDate,
+#eventDuration {
+    display: inline;
+}

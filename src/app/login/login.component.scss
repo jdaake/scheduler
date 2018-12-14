@@ -1,0 +1,38 @@
+#loginBox {
+    // border: 1px solid black;
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px;
+    // border-radius: 15px;
+    box-shadow: 2px 5px 5px black;
+    background-color: whitesmoke
+}
+
+#loginButton {
+    margin-bottom: 15px;
+
+}
+
+#pass,
+#name {
+    display: inline
+}
+
+mat-card {
+    background-color: #303030;
+}
+
+h4 {
+    font-family: 'Lobster',
+        cursive;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.font {
+    font-family: Arial, Helvetica, sans-serif;
+}

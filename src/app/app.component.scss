@@ -1,0 +1,13 @@
+#navBar {
+    background-color: rgb(232, 35, 99);
+}
+
+a:hover {
+    text-decoration: none;
+    transform: scale(1.2);
+}
+
+#navLoginButton,
+#navLogoutButton {
+    float: right;
+}

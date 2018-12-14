@@ -1,0 +1,12 @@
+/* Angular Material Theme */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+body {
+    font-family: Roboto;
+}
+
+body {
+    background-color: rgb(48, 48, 48);
+}

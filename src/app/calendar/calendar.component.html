@@ -1,0 +1,106 @@
+<!-- Add new Calendar box -->
+<div class="container-fluid">
+  <div class="container">
+    <div class="col-12 d-flex">
+      <form class="align-content-center" id="newCalendar" [formGroup]="calendarForm"
+        (ngSubmit)="addCalendar()">
+        <h4>Add New Calendar</h4>
+        <mat-form-field id="name">
+          <input matInput type="text" id="calName" formControlName="name"
+            placeholder="Name" required>
+        </mat-form-field>
+        <mat-form-field id="calDesc">
+          <input matInput color="accent" type="text" id="calDesc"
+            formControlName="description" placeholder="Description" required>
+        </mat-form-field>
+        <button id="addCal" type="submit" mat-button matTooltip="Add new calendar"
+          color="accent"><i class="material-icons">
+            add
+          </i></button>
+      </form>
+    </div>
+    <!-- Calendar Cards -->
+    <div class="d-flex row">
+      <div id="calendars" *ngFor="let calendar of calendars; index as i">
+        <mat-card class="cal-card" [@bounceIn]="bounceIn">
+          <mat-card-header matRipple>
+            <div mat-card-avatar><i class="material-icons">today</i></div>
+            <mat-card-title class="calCardTitle" (click)="getEventsByCalId(i)"
+              matTooltip="View events for this calendar">
+              {{calendar.name|titlecase}}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <h6>
+              {{calendar.description | titlecase}}
+            </h6>
+          </mat-card-content>
+          <mat-card-content>
+            <!-- add event form -->
+            <form class="align-content-center " [formGroup]="eventForm">
+              <h5>Add new event</h5>
+              <mat-form-field id="eventName">
+                <input matInput type="text" formControlName="name" placeholder="Name"
+                  required>
+              </mat-form-field>
+              <mat-form-field id="eventDesc">
+                <input matInput color="accent" type="text" formControlName="description"
+                  placeholder="Description" required>
+              </mat-form-field>
+              <mat-form-field id="eventDate">
+                <input formControlName="date" matInput [matDatepicker]="picker"
+                  placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field id="eventDuration">
+                <input matInput color="accent" type="text" formControlName="duration"
+                  placeholder="Duration" required>
+              </mat-form-field>
+            </form>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button matTooltip="Add event to this calendar" (click)="addEvent(i)"><i
+                class="material-icons">
+                add
+              </i></button>
+            <button mat-button matTooltip="Edit this calendar"><i class="material-icons">
+                create
+              </i></button>
+            <button mat-button matTooltip="Delete this calendar" (click)="deleteCal(i)"><i
+                class="material-icons">
+                delete_forever
+              </i></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <!-- calendar cards -->
+    <!-- Events -->
+    <div class="d-flex row">
+      <div id="events" *ngFor="let event of events; index as i">
+        <mat-card class="event-card" [@bounceIn]="bounceIn">
+          <mat-card-header>
+            <div mat-card-avatar><i class="material-icons">today</i></div>
+            <mat-card-title class="eventCardTitle">Name: {{event.name |
+              titlecase}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Desc: {{event.description | titlecase}}</p>
+            <p>Date: {{event.date | date}}</p>
+            <p>Duration: {{event.duration}} minutes</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button matTooltip="Delete this event" (click)="deleteEvent(i, event.calendarId)"><i
+                class="material-icons">
+                delete_forever
+              </i></button>
+            <button mat-button matTooltip="Edit this event"><i class="material-icons">
+                create
+              </i></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
