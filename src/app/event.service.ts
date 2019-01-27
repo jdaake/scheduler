@@ -24,7 +24,7 @@ export class EventService {
   }
 
   // Get events by event id
-  getById(id) {
+  getById(id: number) {
     return this.http.get(`api/events/byid/${id}`).pipe(
       map(res => res['success']),
       catchError(err => {
@@ -37,7 +37,7 @@ export class EventService {
   }
 
   // Get events by userId
-  getByUserId(id) {
+  getByUserId(id: number) {
     return this.http.get(`api/events/byUser/${id}`).pipe(
       map(res => res['success']),
       catchError(err => {
@@ -76,16 +76,22 @@ export class EventService {
   }
 
   // edit event
-  updateEvent(name: string, description: string) {
-    return this.http.post(`api/events/update`, { 'name': name, 'description': description }).pipe(
-      map(res => res['success']),
-      catchError(err => {
-        console.log(err);
-        return of({
-          err: err
-        });
-      })
-    );
+  updateEvent(name: string, description: string, date: Date, duration: number, id: number) {
+    return this.http.post(`api/events/update/${id}`,
+      {
+        'name': name,
+        'description': description,
+        'date': date,
+        'duration': duration,
+      }).pipe(
+        map(res => res['success']),
+        catchError(err => {
+          console.log(err);
+          return of({
+            err: err
+          });
+        })
+      );
   }
 
   // add event

@@ -34,9 +34,9 @@ export const routes: Routes = [
         component: EventsComponent,
         data: { animation: 'EventsPage' }
     },
-    // {
-    //     // path: '**',
-    //     // redirectTo: 'home'
-    // }
-
+    {
+        path: '**',
+        redirectTo: 'home',
+        data: { animation: 'HomePage' }
+    }
 ];

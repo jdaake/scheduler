@@ -1,6 +1,5 @@
 import { trigger, transition, style, animate, group, query, animateChild } from '@angular/animations';
 
-
 export const slideInAnimation =
     trigger('routeAnimations', [
         transition('* <=> *', [
@@ -21,10 +20,14 @@ export const slideInAnimation =
             ], { optional: true }),
             group([
                 query(':leave', [
-                    animate('.5s ease-out', style({ left: '100%' }))
+                    animate('.5s ease-out', style({
+                        left: '100%'
+                    }))
                 ], { optional: true }),
                 query(':enter', [
-                    animate('.5s ease-out', style({ left: '0%' }))
+                    animate('.5s ease-out', style({
+                        left: '0%'
+                    }))
                 ], { optional: true })
             ]),
             query(':enter', [
@@ -32,3 +35,4 @@ export const slideInAnimation =
             ], { optional: true }),
         ]),
     ]);
+

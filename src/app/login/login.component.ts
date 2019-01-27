@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 
+
 export class LoginComponent implements OnInit {
-  username: string;
-  password: string;
+  loggedIn: boolean;
   error: Object = {};
 
   loginForm = new FormGroup({

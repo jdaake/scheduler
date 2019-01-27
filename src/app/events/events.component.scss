@@ -1,3 +1,103 @@
 p {
     color: white;
 }
+
+.newEvent,
+    {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(48, 48, 48);
+    color: whitesmoke
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.eventFlexBox {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    flex-grow: 1;
+}
+
+.calTitle {
+    margin: auto;
+    max-width: 50%;
+
+}
+
+.noEvent-card {
+    margin: auto;
+    max-width: 50%;
+    background-color: rgb(48, 48, 48);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: whitesmoke;
+    border: 2px solid rgb(232, 35, 99);
+}
+
+.event-card {
+    margin: 10px;
+    background-color: rgb(48, 48, 48);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: whitesmoke;
+
+
+    button {
+        color: white;
+    }
+
+    button:hover {
+        color: rgb(232, 35, 99);
+    }
+}
+
+
+.eventCardTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.backToCals {
+    font-size: 24;
+    float: left;
+    clear: right;
+    color: white;
+    text-decoration: none;
+    width: auto;
+    margin: auto;
+    height: 25px;
+}
+
+.backToCals:hover {
+    color: rgb(232, 35, 99);
+    font-weight: bold;
+
+}
+
+#eventName,
+#eventDesc,
+#eventDate,
+#eventDuration {
+    display: inline-block;
+    margin: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}

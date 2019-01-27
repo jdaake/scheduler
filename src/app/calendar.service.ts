@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -7,7 +7,9 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class CalendarService {
-
+  index: number;
+  calId: number;
+  calName: string;
 
   constructor(private http: HttpClient) { }
 
@@ -64,16 +66,20 @@ export class CalendarService {
   }
 
   // edit calendar
-  updateCalendar(name: string, description: string) {
-    return this.http.post(`api/calendar/update`, { 'name': name, 'description': description }).pipe(
-      map(res => res['success']),
-      catchError(err => {
-        console.log(err);
-        return of({
-          err: err
-        });
-      })
-    );
+  updateCalendar(name: string, description: string, id: number) {
+    return this.http.post(`api/calendar/update/${id}`,
+      {
+        'name': name,
+        'description': description
+      }).pipe(
+        map(res => res['success']),
+        catchError(err => {
+          console.log(err);
+          return of({
+            err: err
+          });
+        })
+      );
   }
 
   // add calendar

@@ -35,6 +35,7 @@ import 'hammerjs';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { EventsComponent } from './events/events.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -45,7 +46,8 @@ import { EventsComponent } from './events/events.component';
     SignupComponent,
     HomeComponent,
     CalendarComponent,
-    EventsComponent
+    EventsComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

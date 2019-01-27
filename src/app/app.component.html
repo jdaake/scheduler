@@ -1,20 +1,4 @@
-<!-- Nav Menu -->
-<nav mat id="navBar">
-  <a mat-button color="primary" [routerLink]="['/home']" routerLinkActive="router-link-active">
-    <i class="material-icons">home</i>
-  </a>
-  <a mat-button color="primary" [routerLink]="['/calendar']" routerLinkActive="router-link-active">
-    <i class="material-icons">today</i>
-  </a>
-
-  <a id="navLoginButton" mat-button color="primary" [routerLink]="['/login']"
-    routerLinkActive="router-link-active">Login</a>
-
-  <a id="navLogoutButton" mat-button color="primary" (click)="logout()" *ngIf="localStorageUser > 0">Logout</a>
-
-</nav>
-
-
+<app-nav></app-nav>
 <!-- Router Animations and Router Outlet -->
 <div [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
